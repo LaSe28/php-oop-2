@@ -1,14 +1,13 @@
 <?php
-include_once __DIR__ . '/classes/animal/animal.php';
 
-class Food extends Animal
+include_once __DIR__ . '/product.php';
+class Food extends Product
 {
-  private $brand;
   private $type;
-  private $price;
 
-  public function __construct($_type)
+  public function __construct($_type, $brand, $price)
   {
+    parent::__construct($brand, $price);
     $this->type = $_type;
   }
 
@@ -29,17 +28,6 @@ class Food extends Animal
     return $this->brand;
   }
 
-  /**
-   * Set the value of brand
-   *
-   * @return  self
-   */ 
-  public function setBrand($brand)
-  {
-    $this->brand = $brand;
-
-    return $this;
-  }
 
   /**
    * Get the value of price
@@ -48,18 +36,4 @@ class Food extends Animal
   {
     return $this->price;
   }
-
-  /**
-   * Set the value of price
-   *
-   * @return  self
-   */ 
-  public function setPrice($price)
-  {
-    $this->price = $price;
-
-    return $this;
-  }
 }
-
-$provaFood = new Food('crocchette');

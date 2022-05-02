@@ -1,9 +1,7 @@
 <?php
-include_once __DIR__ . '/user.php';
 
-class CreditCard extends User
-{
-  private $CCNumber;
+class CreditCard 
+  {
   private $CVV;
   private $ExpirationDate;
   private $ExpirationMonth;
@@ -11,7 +9,6 @@ class CreditCard extends User
   
   public function __construct($_name ,$_surname, $_ExpirationMonth, $_ExpirationYear)
   {
-    parent::__construct($_name, $_surname);
     if ($_ExpirationYear < date("Y") || $_ExpirationMonth < date("m")){
       $this->ExpirationDate = 'La tua carta è scaduta. Prova con un\'altra carta.';
     } else {

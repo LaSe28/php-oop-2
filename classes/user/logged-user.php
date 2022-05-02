@@ -4,12 +4,15 @@ include_once __DIR__ . '/user.php';
 class LoggedUser extends User
 {
   private $birth;
-  private $discount;
+  private $discount = 20;
+  private $creditCard;
 
-  public function __construct($_name ,$_surname, $_birth)
+  public function __construct($_name ,$_surname, $_birth, $_creditCard)
   {
     parent::__construct($_name, $_surname);
     $this->birth = $_birth;
+    $this->creditCard = $_creditCard;
+
   }
 
   /**
@@ -26,18 +29,6 @@ class LoggedUser extends User
   public function getDiscount()
   {
     return $this->discount;
-  }
-
-  /**
-   * Set the value of discount
-   *
-   * @return  self
-   */ 
-  public function setDiscount($discount)
-  {
-    $this->discount = $discount;
-
-    return $this;
   }
 }
 
