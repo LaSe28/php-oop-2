@@ -62,8 +62,3 @@ class CreditCard extends User
 
 }
 
-$prova = new CreditCard('Mattia', 'La Selva', 7, 2022);
-$prova->setCCNumber(450384020);
-$prova->setCVV(802);
-
-var_dump($prova);

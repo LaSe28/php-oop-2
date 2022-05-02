@@ -41,7 +41,3 @@ class LoggedUser extends User
   }
 }
 
-$prova = new LoggedUser('mattia','la selva','28/03/1996');
-$prova->setDiscount(20);
-
-var_dump($prova);
